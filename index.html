@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Websocket Client</title>
+</head>
+<body>
+  <script>
+    var socket = new WebSocket("ws://localhost:9292");
+    socket.onopen = function (event) {
+      socket.send("ping"); 
+    };
+    socket.onmessage = function (event) {
+      console.log(event.data);
+    }
+  </script>
+  <h3>Websocket demo</h3>
+</body>
+</html>
